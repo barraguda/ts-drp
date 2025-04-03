@@ -154,6 +154,17 @@ function run(metrics?: IMetrics): void {
 		if (event.key === "d") moveUser("R");
 	});
 
+	// Mobile control buttons
+	const btnUp = document.getElementById("btn-up");
+	const btnDown = document.getElementById("btn-down");
+	const btnLeft = document.getElementById("btn-left");
+	const btnRight = document.getElementById("btn-right");
+
+	btnUp?.addEventListener("click", () => moveUser("U"));
+	btnDown?.addEventListener("click", () => moveUser("D"));
+	btnLeft?.addEventListener("click", () => moveUser("L"));
+	btnRight?.addEventListener("click", () => moveUser("R"));
+
 	const copyButton = <HTMLButtonElement>document.getElementById("copyGridId");
 	copyButton.addEventListener("click", () => {
 		const gridIdText = (<HTMLSpanElement>document.getElementById("gridId")).innerText;
